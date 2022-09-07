@@ -4,10 +4,11 @@ n.textContent = myName
 
 timeFunc = () => {
     date = new Date()
+    const days=["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
     let hours = date.getHours()
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
-    let day = date.getDay()
+    let day = days[date.getDay()]
     if (hours < 10) {
         hours = "0" + hours
     }
@@ -17,32 +18,7 @@ timeFunc = () => {
     if (seconds < 10) {
         seconds = "0" + seconds
     }
-    switch (day) {
-        case 0:
-            day = 'Pazar'
-            break;
-        case 1:
-            day = 'Pazartesi'
-            break;
-        case 2:
-            day = 'Salı'
-            break;
-        case 3:
-            day = 'Çarşamba'
-            break;
-        case 4:
-            day = 'Perşembe'
-            break;
-        case 5:
-            day = 'Cuma'
-            break;
-        case 6:
-            day = 'Cumartesi'
-            break;
-
-        default:
-            break;
-    }
+       
     document.querySelector("#myClock").innerHTML = hours + ":" + minutes + ":" + seconds + "     " + day
 }
 timeFunc()
